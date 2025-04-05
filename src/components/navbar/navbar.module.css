@@ -1,0 +1,84 @@
+#navbar {
+  height: 70px;
+  width: 100%;
+  background: linear-gradient(to right, #fb492c, #ff4749);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  position: relative;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.darkToggle {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
+.navLinks li {
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.signupbtn {
+  background-color: white;
+  color: black;
+}
+
+.loginbtn:hover {
+  background-color: rgba(255, 255, 255, 0.167);
+  cursor: pointer;
+}
+
+.logout {
+  cursor: pointer;
+  list-style: none;
+}
+
+.logout:hover {
+  background-color: rgba(255, 255, 255, 0.167);
+}
+
+.menuIcon {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menuIcon {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    list-style: none;
+    right: 0;
+    background-color: #fb492c;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .showMenu {
+    display: flex;
+  }
+}

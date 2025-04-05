@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+.dark-btn {
+  padding-top: 2px;
+  margin-top: 5px;
+  border: none;
+  font-size: 10px;
+  /* border-radius: 50%; */
+  /* background-color: rgb(218, 215, 215); */
+  /* color: white;  */
+  background-color: transparent;
+}
