@@ -13,7 +13,7 @@ const Signup = () => {
     email: "",
     password: "",
   });
-  const naviate = useNavigate();
+  const navigate = useNavigate();
   let handleChange = (e) => {
     e.preventDefault();
     let { name, value } = e.target;
@@ -25,15 +25,20 @@ const Signup = () => {
     console.log(signupUser);
 
     try {
-      let response = await axios.post(
-        "http://localhost:8080/api/auth/signup",
+      const response = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/api/auth/signup`,
         signupUser
       );
+
       console.log(response);
-      toast.success("registered successfully.!!");
-      naviate("/login");
+      toast.success("Registered successfully..");
+      navigate("/login");
     } catch (error) {
-      console.log("error while posting the signupuser", error.response?.data || error.message);
+      console.error(
+        "Error during signup:",
+        error.response?.data || error.message
+      );
+      toast.error(error.response?.data?.message || "Something went wrong!");
       toast.error("something went wrong.!!");
     }
 
@@ -94,7 +99,9 @@ const Signup = () => {
             />
             <br />
             <p>
-              <Link to={"/login"}>Already have an account? <span>Log In</span></Link>
+              <Link to={"/login"}>
+                Already have an account? <span>Log In</span>
+              </Link>
             </p>
             <button type="submit">SIGN UP</button>
           </form>

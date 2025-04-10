@@ -13,7 +13,7 @@ const Profile = () => {
     async function getUserData() {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/auth/profile/${userId}`
+          `${import.meta.env.VITE_BASE_URL}/api/auth/profile/${userId}`
         );
         console.log(response.data);
         setProfileData(response.data);

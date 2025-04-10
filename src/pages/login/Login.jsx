@@ -26,16 +26,15 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/auth/login",
+        `${import.meta.env.VITE_BASE_URL}/api/auth/login`,
         loginuser
       );
-
       const { user } = response.data;
       localStorage.setItem("userid", user.id);
       toast.success(`Welcome to your profile`);
       navigate("/profile");
     } catch (err) {
-      toast.error("Login Failed");
+      toast.error("Login Failed, Please Signup first..");
       console.error("Login Failed", err);
     }
   };
