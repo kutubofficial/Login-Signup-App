@@ -16,16 +16,15 @@
   font-weight: bold;
 }
 
-.darkToggle {
+.rightItems {
   display: flex;
   align-items: center;
-  margin-left: auto;
-  margin-right: 20px;
+  gap: 20px;
 }
 
 .navLinks {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   list-style: none;
   align-items: center;
 }
@@ -40,23 +39,34 @@
   color: black;
 }
 
-.loginbtn:hover {
+.signupbtn:hover {
+  cursor: pointer;
+}
+
+.loginbtn:hover,
+.logout:hover {
   background-color: rgba(255, 255, 255, 0.167);
   cursor: pointer;
 }
 
 .logout {
+  padding: 10px;
+  border-radius: 10px;
   cursor: pointer;
   list-style: none;
-}
-
-.logout:hover {
-  background-color: rgba(255, 255, 255, 0.167);
 }
 
 .menuIcon {
   display: none;
   cursor: pointer;
+  align-items: center;
+}
+
+.darkWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
 }
 
 @media (max-width: 768px) {
@@ -66,10 +76,9 @@
 
   .navLinks {
     display: none;
-    align-items: center;
+    align-items: flex-start;
     position: absolute;
     top: 70px;
-    list-style: none;
     right: 0;
     background-color: #fb492c;
     flex-direction: column;
@@ -80,5 +89,13 @@
 
   .showMenu {
     display: flex;
+    background: linear-gradient(to right, #d5867a, #fb492c);
+    border-radius: 0 0 10px 10px;
+    width: 30%;
+  }
+
+  .darkWrapper {
+    margin-left: auto;
+    /* align-items: center; */
   }
 }

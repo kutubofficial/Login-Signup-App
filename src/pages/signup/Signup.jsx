@@ -33,7 +33,7 @@ const Signup = () => {
       toast.success("registered successfully.!!");
       naviate("/login");
     } catch (error) {
-      console.log("error while posting the signupuser");
+      console.log("error while posting the signupuser", error.response?.data || error.message);
       toast.error("something went wrong.!!");
     }
 

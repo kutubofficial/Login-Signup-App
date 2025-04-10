@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./navbar.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import Dark from "../../pages/layout/Dark";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -12,6 +12,11 @@ const Navbar = () => {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
+  const handleNavigate = (path) => {
+    setMenuOpen(false);
+    navigate(path);
+  };
+
   const logout = () => {
     localStorage.removeItem("userid");
     navigate("/login");
@@ -22,41 +27,38 @@ const Navbar = () => {
     <nav id={styles.navbar}>
       <h3 className={styles.logo}>Logo</h3>
 
-      <div className={styles.darkToggle}>
-        <Dark />
-      </div>
-      {id && (
-        <li onClick={logout} className={styles.logout}>
-          Logout
-        </li>
-      )}
+      <div className={styles.rightItems}>
+        <div className={styles.darkWrapper}>
+          <Dark />
+        </div>
 
-      {!id && (
+        <ul className={`${styles.navLinks} ${menuOpen ? styles.showMenu : ""}`}>
+          {id ? (
+            <li className={styles.logout} onClick={logout}>
+              Logout
+            </li>
+          ) : (
+            <>
+              <li
+                className={styles.loginbtn}
+                onClick={() => handleNavigate("/login")}
+              >
+                Login
+              </li>
+              <li
+                className={styles.signupbtn}
+                onClick={() => handleNavigate("/")}
+              >
+                Signup
+              </li>
+            </>
+          )}
+        </ul>
+
         <div className={styles.menuIcon} onClick={toggleMenu}>
           {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </div>
-      )}
-
-      <ul
-        className={`${styles.navLinks} ${
-          menuOpen && !id ? styles.showMenu : ""
-        }`}
-      >
-        {id ? (
-          <li onClick={logout} className={styles.logout}>
-            Logout
-          </li>
-        ) : (
-          <>
-            <li className={styles.loginbtn}>
-              <Link to="/login">Login</Link>
-            </li>
-            <li className={styles.signupbtn}>
-              <Link to="/">Signup</Link>
-            </li>
-          </>
-        )}
-      </ul>
+      </div>
     </nav>
   );
 };
