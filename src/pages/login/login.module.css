@@ -141,9 +141,9 @@
 
 @media (max-width: 425px) {
   #logincontainer>section {
-    height: 45vh;
+    height: 85vh;
     width: 90vw;
-    /* border: 2px solid black; */
+    border: 2px solid black;
     box-shadow: 0 10px 10px rgb(210, 208, 208);
     display: grid;
   }
@@ -161,7 +161,7 @@
 }
 @media (max-width: 430px) {
   #logincontainer>section {
-    height: 45vh;
+    height: 85vh;
     width: 90vw;
     /* border: 2px solid black; */
     box-shadow: 0 10px 10px rgb(210, 208, 208);
@@ -213,7 +213,7 @@
 @media (max-width: 376px) {
 
   #logincontainer>section {
-    height: 45vh;
+    height: 85vh;
     width: 85vw;
     /* border: 2px solid black; */
     box-shadow: 0 10px 10px rgb(210, 208, 208);
@@ -314,7 +314,7 @@
 
 @media (max-width: 320px) {
   #logincontainer>section {
-    height: 45vh;
+    height: 85vh;
     width: 90vw;
     /* border: 2px solid black; */
     box-shadow: 0 10px 10px rgb(210, 208, 208);
@@ -334,7 +334,7 @@
 }
 @media (max-width: 275px) {
   #logincontainer>section {
-    height: 45vh;
+    height: 85vh;
     width: 90vw;
     /* border: 2px solid black; */
     box-shadow: 0 10px 10px rgb(210, 208, 208);
