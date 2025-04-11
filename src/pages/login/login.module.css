@@ -181,7 +181,7 @@
 }
 @media (max-width: 412px) {
   #logincontainer>section {
-    height: 80vh;
+    height: 75vh;
     width: 80vw;
     /* border: 2px solid black; */
     box-shadow: 0 10px 10px rgb(210, 208, 208);
